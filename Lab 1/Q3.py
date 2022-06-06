@@ -13,9 +13,10 @@ a.	Given a list of full names, print acronyms for each by combining the first le
 '''
 nameList=["Abdulla mhd zayed", "rashid asif", "john elton rowan smith", "Ali Rami"] 
 
-print(*[fullName.split()[0][0].upper()+ fullName.split()[-1][0].upper() for fullName in nameList])
+for fullName in nameList:
+	print(fullName.split()[0][0].upper()+ fullName.split()[-1][0].upper(),end= " ")
 
-
+print()
 '''
 
 b.	Given a string, such as "Welcome to UAE. uae is awesome, right?", find all occurrences of "UAE" in that string (ignoring case).

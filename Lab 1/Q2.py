@@ -17,7 +17,7 @@ print(string == string[::-1])
 places = ["Cairo", "Egypt", "Baghdad", "Iraq", "Delhi", "India", "Tehran", "Iran", "Riyadh", "Saudi Arabia", "Ankara", "Turkey"]
 print(places[::2]) #Even indicies
 print(places[::-2]) #Odd indicies backwards
-places = ["Muscat" if i == "Delhi" else i for i in places]
-places = ["Oman" if i == "India" else i for i in places]
+places[places.index('Delhi')]="Muscat"
+places[places.index('India')]="Oman"
 print(places)
 
