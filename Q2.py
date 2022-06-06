@@ -6,7 +6,6 @@ Created on Mon Jun  6 10:46:15 2022
 """
 
 #Part (a)
-
 string = "Welcome to Python"
 print(string[5:10])
 print(string[4:])
@@ -18,3 +17,7 @@ print(string[:] == string[::-1])
 places = ["Cairo", "Egypt", "Baghdad", "Iraq", "Delhi", "India", "Tehran", "Iran", "Riyadh", "Saudi Arabia", "Ankara", "Turkey"]
 print(places[1::2])
 print(places[::-2])
+places = ["Muscat" if i == "Delhi" else i for i in places]
+places = ["Oman" if i == "India" else i for i in places]
+print(places)
+
