@@ -23,4 +23,4 @@ b.	Given a string, such as "Welcome to UAE. uae is awesome, right?", find all oc
 '''
 s="Welcome to UAE. uae is awesome, right?"
 
-print(s.lower().count('uae'))
+print(s.lower().count('uae')) #.lower to ignore the case

@@ -8,15 +8,15 @@ Created on Mon Jun  6 10:46:15 2022
 #Part (a)
 string = "Welcome to Python"
 print(string[5:10])
-print(string[4:])
+print(string[4:]) #5th char onwards (AFTER 4th char)
 print(string[-5:])
-print(string[:] == string[::-1])
+print(string == string[::-1])
 
 #Part (b)
 
 places = ["Cairo", "Egypt", "Baghdad", "Iraq", "Delhi", "India", "Tehran", "Iran", "Riyadh", "Saudi Arabia", "Ankara", "Turkey"]
-print(places[1::2])
-print(places[::-2])
+print(places[::2]) #Even indicies
+print(places[::-2]) #Odd indicies backwards
 places = ["Muscat" if i == "Delhi" else i for i in places]
 places = ["Oman" if i == "India" else i for i in places]
 print(places)

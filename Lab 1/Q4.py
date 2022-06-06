@@ -33,7 +33,7 @@ France:  phoneNumber = 33109758351, phoneFormat = "2+1+2+2+2+2"
   formatted output:  91-896-6428361
 
 '''
-
+print('-'*95)
 def splitNum(num,form):
     num=str(num)
     arr=list(map(int,form.split('+')))

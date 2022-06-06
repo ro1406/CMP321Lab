@@ -6,7 +6,8 @@ Created on Mon Jun  6 12:40:36 2022
 """
 
 '''
-a.	Display sin and cos values of n in the range 1 to 10 in a tabular format as given below with 5 decimals. Use formatting method from string class.
+a.	Display sin and cos values of n in the range 1 to 10 in a tabular format as given below with 
+5 decimals. Use formatting method from string class.
 
  1         0.84147         0.54030
  2         0.90930        -0.41615
