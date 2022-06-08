@@ -8,30 +8,27 @@ serverInfo = ( "id=0;role=admin;username=joe;surname=naysmith",
                          "surname=suffi;username=sam;role=guest;id=421",
                         "id=33;surname=lee;username=mia;role=staff"  )
 #a)
-database={}
-
-for record in serverInfo:
-    fields=record.split(';')
-    fields=sorted(fields,reverse=True)
-    #ID is not always the first element, so must find it:
-    for field in fields:
-        if 'id=' in field:
-            #Found the id field!
-            currID=field.split('=')[1] #Store the ID
-            fields.remove(field) #Dont need it in the array anymore
-            break
-
-    innerDict={} # The record for each ID
-    for field in fields:
-        innerDict[field.split('=')[0]]=field.split('=')[1]
+def makeDatabase():
+    database={}
     
-    database[currID]=innerDict
+    for record in serverInfo: 
+        fields=record.split(';')
+        fields=sorted(fields,reverse=True)
+        
+        currID=fields[-1].split('=')[1] #The last field is the ID (since we sorted in descending order)
+    
+        innerDict={} # The record for each ID
+        for field in fields[:-1]:#Omit the ID
+            innerDict[field.split('=')[0]]=field.split('=')[1]
+        
+        database[currID]=innerDict
+    return database
 
-for key in sorted(database.keys()):
-    print(key,"   ",database[key])
+db=makeDatabase()
+print('db =',db)
     
     
 #b)
-for key in sorted(database.keys()):
-    record=database[key]
+for key in sorted(db.keys()):
+    record=db[key]
     print(f"{record['surname'].title()}, {record['username'].title()} - {record['role']}")

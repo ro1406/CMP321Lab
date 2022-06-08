@@ -9,7 +9,7 @@ text = "The best programs are written so that computing machines can perform the
 text = text.lower()
 letters = {}
 for i in text:
-    if 'a' <= i <= 'z' :
+    if i.isalpha() :
         if i in letters.keys():
             letters[i] += 1
         else:
