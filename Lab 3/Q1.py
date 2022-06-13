@@ -24,3 +24,34 @@ def fibAcc(n):
     return fibAcc(n)
 
 print([fibAcc(i) for i in range(11)])
+
+#part c)
+
+def fibMemoized(n):
+    memo={0:1,1:1}
+    def fibMemoized(n):
+        if n in memo:
+            return memo[n]
+        
+        return fibMemoized(n-1)+fibMemoized(n-2)
+    
+    return fibMemoized(n)
+print([fibMemoized(i) for i in range(11)])
+
+#part d)
+def fibAccList(n):
+    arr=[1,1]
+    def fibAccList(n,arr):
+        if n==0:
+            return [1]
+        if n==1:
+            return [1,1]
+        if len(arr)==n:
+            return arr
+        arr.append(arr[-1]+arr[-2])
+        return fibAccList(n,arr)
+        
+    return fibAccList(n,arr)
+
+
+print(fibAccList(11))
