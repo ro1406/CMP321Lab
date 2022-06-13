@@ -15,9 +15,12 @@ def fib(n):
 print([fib(i) for i in range(11)])
 
 #part b)
-def fibAcc(n,prev=0,acc=1):
-    if n<=0:
-        return acc
-    return fibAcc(n-1,acc,prev+acc)
+
+def fibAcc(n):
+    def fibAccPrivate(n,prev=0,acc=1):
+        if n<=0:
+            return acc
+        return fibAccPrivate(n-1,acc,prev+acc)
+    return fibAccPrivate(n)
 
 print([fibAcc(i) for i in range(11)])
