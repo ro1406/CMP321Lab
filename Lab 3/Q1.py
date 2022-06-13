@@ -28,12 +28,11 @@ print([fibAcc(i) for i in range(11)])
 #part c)
 
 def fibMemoized(n):
-    memo={0:1,1:1}
-    def fibMemoized(n):
+    def fibMemoized(n, memo={0:1,1:1}):
         if n in memo:
             return memo[n]
 
-        memo[n]=fibMemoized(n-1)+fibMemoized(n-2)
+        memo[n]=fibMemoized(n-1, memo) + fibMemoized(n-2, memo)
         return memo[n]
     
     return fibMemoized(n)
