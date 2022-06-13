@@ -32,8 +32,9 @@ def fibMemoized(n):
     def fibMemoized(n):
         if n in memo:
             return memo[n]
-        
-        return fibMemoized(n-1)+fibMemoized(n-2)
+
+        memo[n]=fibMemoized(n-1)+fibMemoized(n-2)
+        return memo[n]
     
     return fibMemoized(n)
 print([fibMemoized(i) for i in range(11)])
