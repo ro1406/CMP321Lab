@@ -25,10 +25,10 @@ class Employee:
     def __gt__(self,other):
          return (self.id > other.id)
 
-def sort(values, comp):
+def sort(values, comp=lambda x,y:x.id>y.id):
     for i in range(1, len(values)):
         for j in range(0, len(values)-1):
-            if(values[j] > values[j+1]):
+            if (comp(values[j],values[j+1])):#if(values[j] > values[j+1]):
                 values[j], values[j+1] = values[j+1], values[j];
 
     return values
@@ -55,3 +55,16 @@ Print all employees,
 Note that for ID the default > operator used by sort should suffice. No lambda is required. However, for others pass a lambda that compares the relevant fields is required.
 
 '''
+print("By ID:")
+res=sort(lst)
+for x in res:print(x,end=" ")
+print('-'*90)
+
+print("By Name:")
+res=sort(lst,lambda x,y: x.name>y.name)
+for x in res:print(x,end=" ")
+
+print('-'*90)
+print("By Rank then by ID:")
+res=sort(lst,lambda x,y: x.id>y.id if x.rank==y.rank else x.rank>y.rank)
+for x in res:print(x,end=" ")
