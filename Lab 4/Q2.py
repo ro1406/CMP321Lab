@@ -28,7 +28,7 @@ class Employee:
 def sort(values, comp=Employee.__gt__):
     for i in range(1, len(values)):
         for j in range(0, len(values)-1):
-            if (comp(values[j],values[j+1])):#if(values[j] > values[j+1]):
+            if (comp(values[j],values[j+1])):
                 values[j], values[j+1] = values[j+1], values[j];
 
     return values
