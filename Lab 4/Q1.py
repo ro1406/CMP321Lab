@@ -47,12 +47,15 @@ class PointNotFoundError(Exception):
         self.message = message
         super().__init__(self.message)
 
+class LackOfArgsError(Exception):
+    def __init__(self, message="Too few arguments to define a Polygon!"):
+        self.message = message
+        super().__init__(self.message)
 
 class Polygon:
     def __init__(self,*args):
         if len(args)<3:
-            print("Error! Too few arguments passed in for a polygon!")
-            #Should throw exception here
+            raise LackOfArgsError # Could also just print error message
             return
         self.points=[]
         for pt in args:
@@ -75,27 +78,29 @@ class Polygon:
     
     ############################# part b #############################
     def insert(self,index,p):
-        for pt in self.points:
-            if pt.name==p.name and pt.x==p.x and pt.y==p.y:
-                raise ExistingPointError 
-                return 
-        self.points.insert(index,p)
+        try:
+            if self.__contains__(p):
+                raise ExistingPointError
+            self.points.insert(index,p)
+        except ExistingPointError:
+            pass
         
     def getPoint(self,name):
         for pt in self.points:
             if pt.name==name:
                 return pt
-        raise PointNotFoundError 
+        raise PointNotFoundError  #Only executed if point not found
         
     def remove(self,p):
         for pt in self.points:
             if pt.name==p.name:
                 self.points.remove(pt)
                 return
-        raise PointNotFoundError 
+        raise PointNotFoundError #Only executed if point not found
         
     def __cmp__(self,rhs):
         if len(self.points)!=len(rhs.points): return False
+        
         for pt1,pt2 in zip(self.points,rhs.points):
             if not(pt1.x==pt2.x and pt1.y==pt2.y):
                 return False
@@ -124,6 +129,7 @@ p= Polygon(Point('A',0,50),Point('B',300,150),Point('C',400,300))
 p.insert(len(p),Point('D',450,100))
 p.insert(len(p),Point('E',470,200))
 
+# Test LackOfArgsError: pol=Polygon(Point('R',14,14))
 # Test Existing Point Exception: p.insert(len(p),Point('A',0,50))
 # Test Not Found Point Exception: print(p.getPoint('R'))
 
