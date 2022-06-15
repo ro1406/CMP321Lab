@@ -118,11 +118,11 @@ print("Testing len: ", len(p))
 print(p)
 p.remove(Point('B',300,150))
 print(p)
-print( "Testing in ",  Point('A',0,50) in p )
+print( "Testing in: ",  Point('A',0,50) in p )
 
 p1= Polygon(Point('A',0,50),Point('B',300,150),Point('C',400,300))
 
 print(p1)
-print(p1==p)
+print('p1==p:',p1==p)
 
 p.draw()
