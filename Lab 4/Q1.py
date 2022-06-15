@@ -37,6 +37,17 @@ import turtle
 Point = namedtuple('Point', 'name x y')
 
 
+class ExistingPointError(Exception):
+    def __init__(self, message="Point already exists in Polygon!"):
+        self.message = message
+        super().__init__(self.message)
+
+class PointNotFoundError(Exception):
+    def __init__(self, message="Point not found in Polygon!"):
+        self.message = message
+        super().__init__(self.message)
+
+
 class Polygon:
     def __init__(self,*args):
         if len(args)<3:
@@ -66,7 +77,7 @@ class Polygon:
     def insert(self,index,p):
         for pt in self.points:
             if pt.name==p.name and pt.x==p.x and pt.y==p.y:
-                raise ExistingPointError #TBD
+                raise ExistingPointError 
                 return 
         self.points.insert(index,p)
         
@@ -74,14 +85,14 @@ class Polygon:
         for pt in self.points:
             if pt.name==name:
                 return pt
-        raise PointNotFoundError #TBD
+        raise PointNotFoundError 
         
     def remove(self,p):
         for pt in self.points:
             if pt.name==p.name:
                 self.points.remove(pt)
                 return
-        raise PointNotFoundError #TBD
+        raise PointNotFoundError 
         
     def __cmp__(self,rhs):
         if len(self.points)!=len(rhs.points): return False
@@ -112,6 +123,9 @@ p= Polygon(Point('A',0,50),Point('B',300,150),Point('C',400,300))
 
 p.insert(len(p),Point('D',450,100))
 p.insert(len(p),Point('E',470,200))
+
+# Test Existing Point Exception: p.insert(len(p),Point('A',0,50))
+# Test Not Found Point Exception: print(p.getPoint('R'))
 
 print("Testing getPoint: ", p.getPoint('B'))
 print("Testing len: ", len(p))
