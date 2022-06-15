@@ -57,9 +57,7 @@ class Polygon:
         if len(args)<3:
             raise LackOfArgsError # Could also just print error message
             return
-        self.points=[]
-        for pt in args:
-            self.points.append(pt)
+        self.points=list(args)
         
     def __str__(self):
         res=''
@@ -100,7 +98,7 @@ class Polygon:
         
     def __cmp__(self,rhs):
         if len(self.points)!=len(rhs.points): return False
-        
+
         for pt1,pt2 in zip(self.points,rhs.points):
             if not(pt1.x==pt2.x and pt1.y==pt2.y):
                 return False
