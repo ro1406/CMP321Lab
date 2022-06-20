@@ -5,6 +5,7 @@ Created on Mon Jun 20 12:07:06 2022
 @author: rohan
 """
 
+from functools import reduce
 '''
 Part(a):
 1.	Define a list that represents a list of temperatures in Fahrenheit. 
@@ -65,3 +66,13 @@ Part(d):
 Use a lambda expression to calculate (xi – avg)2 , where avg is the average in step 8. 
 
 '''
+print("Average of temperatures using Reduce:")
+avg=reduce(lambda x,y:x+y,celsius) / len(celsius)
+print(avg)
+
+print('-'*90)
+
+print("Std div of temperatures using Reduce + Lambda Expression:")
+print( ( ( reduce(lambda x,y: x+y, map(lambda x:(x-avg)**2,celsius ) ) ) / (len(celsius)-1) )**0.5 )
+
+print('-'*90)
