@@ -22,10 +22,10 @@ class Primes:
         return self
     
     def __next__(self):
-        n=self.curr+1
+        n=self.curr
         while not isPrime(n):
             n+=1
-        self.curr=n
+        self.curr=n+1
         return n
 
 '''
