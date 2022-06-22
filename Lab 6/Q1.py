@@ -7,10 +7,13 @@ Created on Wed Jun 22 12:17:17 2022
 #Q1:
 import math
 def isPrime(n,div=2):
+    if n<=2:
+        return n==2
     if div>math.sqrt(n):
         return True
     if n%div==0:
         return False
     return isPrime(n,div+1)
 
-for x in range(2,30+1): print(f'{x}: {isPrime(x)}')
+if __name__ == '__main__':
+    for x in range(2,30+1): print(f'{x}: {isPrime(x)}')
