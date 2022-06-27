@@ -27,7 +27,7 @@ Write a Python script that uses a regular expression to check if a given string 
 import re
 
 def checkExpression(expression):
-    if re.fullmatch(r"([a-zA-Z]+[0-9]*[a-zA-Z]* = [+-]*\w+\.*[0-9]*( *[+\-*/%] ([+-]*\w\.*[0-9]*)+)*)",expression):
+    if re.fullmatch(r"([a-zA-Z]+[0-9]*[a-zA-Z]* = [+-]?\w+(\.[0-9])*( *[+\-*/%] [+-]?\w+(\.[0-9])*)*)",expression):
         return True
     return False
     
