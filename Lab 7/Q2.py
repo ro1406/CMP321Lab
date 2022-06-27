@@ -27,9 +27,12 @@ Write a Python script that uses a regular expression to check if a given string 
 import re
 
 def checkExpression(expression):
-    if re.fullmatch(r"{0}\s?[=]")
+    if re.fullmatch(r"([a-zA-Z]+[0-9]*[a-zA-Z]* = [+-]*\w+\.*[0-9]*( *[+\-*/%] ([+-]*\w\.*[0-9]*)+)*)",expression):
+        return True
+    return False
+    
 
-lst = ["x = y", "y = y * z", "z = a + b - 1 / c", "p = 3.1415 * d", "x = y *","y = y z","z = + b – 1 /c","3 = p * d"] #test cases for checking expression
+lst = ["x = y", "y = y * z", "z = a + b - 1 / c", "p = 3.1415 * d", "x = y *","y = y z","z = + b – 1 /c","3 = p * d",'x = -3 + y','x = y / -3'] #test cases for checking expression
 
 for item in lst:
-    checkExpression(item)
+    print(item,':',checkExpression(item))
