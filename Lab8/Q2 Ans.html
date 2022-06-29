@@ -1,0 +1,68 @@
+<p><h1>Markdown: Basics.  </h1></ol>
+<h2>Getting the Gist of Markdown's Formatting Syntax</h2></ol>This page offers a brief overview of what it's like to use Markdown.
+The syntax page provides complete, detailed documentation for
+every feature, but Markdown should be very easy to pick up simply by
+looking at a few examples of it in action.</p><p>It's also helpful to simply try Markdown out; the Dingus is a
+web application that allows you type your own Markdown-formatted text
+and translate it to XHTML.</p><p><strong>Note:</strong> This document is itself written using Markdown.</p><p><br><h2> Paragraphs and Headers </h2></ol>
+A paragraph is simply one or more consecutive lines of text, separated
+by one or more blank lines. (A blank line is any line that looks like
+a blank line -- a line containing nothing but spaces or tabs is
+considered blank.) Normal paragraphs should not be indented with
+spaces or tabs.</p><p>A line that ends with two spaces will force a newline output, hence
+disabling automatic paragraph wrapping. This can be useful e.g., when
+writing programming code, or poetry, or code-poems.</ul><br>Markdown offers two styles of headers: <em>Setext</em> and <em>atx</em>.
+Setext-style headers for `<code>h1</code>` and `<code>h2</code>` are created by
+"underlining" with equal signs (`=`) and hyphens (`-`), respectively.
+To create an atx-style header, you put 1-6 hash marks (`#`) at the
+beginning of the line -- the number of hashes equals the resulting
+HTML header level.
+<h2></h2></ol>Markdown:</p><p><h1>A First Level Header</h1>
+  <br><h2>A Second Level Header</h2></ol>Now is the time for all good men to come to the aid of their country.
+This is just a regular paragraph.</p><p>The quick brown fox jumped over the lazy dog's back.</p><p><h3> Header 3</h3></ol>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+ullamcorper suscipit lobortis nisl ut aliquip ex commodo consequat.
+Duis autem vel eum iriure dolor in enderit in vulputate velit esse
+molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+vero eros et accumsan et iusto odio dignissim qui blandit praesent
+luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p><p><h3> Another [duh!]</h3></ol>Nam liber tempor cum soluta nobis eleifend option congue nihil
+imperdiet doming id quod mazim placerat facer possim assum. Typi
+non habent claritatem insitam; est usus legentis in iis qui facit
+eorum claritatem. Investigationes demonstraverunt lectores legere
+quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
+sequitur mutationem consuetudium lectorum. Mirum est notare quam
+littera gothica, quam nunc putamus parum claram, anteposuerit
+litterarum formas humanitatis per seacula quarta decima et quinta
+decima. Eodem modo typi, qui nunc nobis videntur parum clari,
+fiant sollemnes in futurum.
+<h2></h2></ol><h3> Phrase Emphasis </h3></ol>
+Markdown uses <em>asterisks</em> and <em>underscores</em> to indicate spans of emphasis (i.e., <em>italics</em>).
+ <br>Use two asterisks for <strong>strong emphasis</strong> (i.e., <strong>bold</strong>).
+Or, if you prefer, <strong>use two underscores instead</strong>.
+   </p><p><h2> Lists </h2></ol>
+Unordered (bulleted) lists use asterisks, pluses, and hyphens (`*`, `+`,
+and `-`) as list markers. These three markers are interchangable. </ul>This (using an asterisk `*`):<ul><li> Candy.</li>
+<li> Gum.</li>
+<li> Booze.</li></ul>this (using a plus sign `+`):<ul><li> Candy.</li>
+<li> Gum.</li>
+<li> Booze.</li></ul>and this (using a minus sign `-`):<ul><li> Candy.</li>
+<li> Gum.</li>
+<li> Booze.</li></ul>all produce the same output.</p><p>
+Ordered (numbered) lists use regular numbers, followed by periods, as
+list markers:<ol><li>  Red</li>
+<li>  Green</li>
+<li>  Blue</ol></li>
+If you put blank lines between items, you'll get `<code>p</code>` tags for the
+list item text. You can create multi-paragraph list items by indenting
+the paragraphs by 4 spaces or 1 tab:</ol><li> A list item.</li>
+  <br>    With multiple paragraphs.</p><p><li> Another item in the list.</li>    </ul><h3> Code </h3></ol>
+In a regular paragraph, you can create code span by wrapping text in
+backtick quotes. Any ampersands (`&`) and angle brackets (`<` or
+`>`) will automatically be translated into HTML entities. This makes
+it easy to use Markdown to write about HTML example code:</p><p>    I strongly recommend against using any `<code>blink</code>` tags.</p><p>    I wish SmartyPants used named entities like <code>mdash</code>
+    instead of decimal-encoded entites like <code>#8212</code>.</ol>
+To specify an entire block of pre-formatted code, indent every line of
+the block by 4 spaces or 1 tab. Just like with code spans, `&`, `<`,
+and `>` characters will be escaped automatically.
+<h2></h2></ol>And to conclude, a word of wisdom, or two...</p><p><h2>The Zen of Python, by Tim Peters</h2></ol>Beautiful is better than ugly.<br>Explicit is better than implicit.<br>Simple is better than complex.<br>Complex is better than complicated.<br>Flat is better than nested.<br>Sparse is better than dense.<br>Readability counts.<br>Special cases aren't special enough to break the rules.<br>Although practicality beats purity.<br>Errors should never pass silently.<br>Unless explicitly silenced.<br>In the face of ambiguity, refuse the temptation to guess.<br>There should be one-- and preferably only one --obvious way to do it.<br>Although that way may not be obvious at first unless you're Dutch.<br>Now is better than never.<br>Although never is often better than <em>right</em> now.<br>If the implementation is hard to explain, it's a bad idea.<br>If the implementation is easy to explain, it may be a good idea.<br>Namespaces are one honking great idea -- let's do more of those!  </ul></p>
